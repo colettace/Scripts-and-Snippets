@@ -21,12 +21,19 @@ class Song( object ):
 	def GenerateWikitable( cls, in_rotation = True ):
 
 		# begin table
-		text = '{| class="wikitable sortable"\n'
+		text = '{| class="'
+		
+		# The wishlist should be collapsed by default
+		if not in_rotation:
+			text += 'mw-collapsible mw-collapsed '
+		
+		text += 'wikitable sortable"\n'
 
 		# Add Caption
 		wishes = " performs."
 		if not in_rotation:
 			wishes = ' used to perform or wishes he could perform.'
+
 
 		text += '|+ A table of all the songs Chris' + wishes + '\n'
 
